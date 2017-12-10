@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pendaftaran hampir selesai...</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/dataTables.bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/theme.css" rel="stylesheet"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image: url("../images/background-register.jpg");
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5 col-centered">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Pendaftaran hampir selesai
+                </div>
+                <div class="panel-body" style="padding:40px;">
+                    <span th:if="${resend}">Email telah dikirimkan ulang<br/></span>
+                    Periksa e-mail anda, untuk melakukan <b>Aktivasi Akun Baru</b>.
+                    <br/>
+                    <a href="/">Kembali ke Halaman Utama</a>
+                </div>
+                <div class="panel-footer center">
+                    Belum menerima email? <a th:href="@{/activation(email=${currEmail},resend='true')}">Kirim Ulang Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
